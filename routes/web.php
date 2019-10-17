@@ -15,4 +15,10 @@
 //    return view('welcome');
 //});
 
-Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
+Route::domain(env('APP_DOMAIN'))->group(function () {
+    Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
+});
+
+Route::domain('diary.' . env('APP_DOMAIN'))->group(function () {
+    Route::get('/', ['as' => 'diary.index', 'uses' => 'DiaryController@index']);
+});

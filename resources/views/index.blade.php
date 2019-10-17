@@ -47,7 +47,7 @@
 
                 <div class="socials">
                     <ul>
-                        <li><i class="far fa-edit"></i></li>
+                        <li><a href="{{route('diary.index')}}"><i class="far fa-edit"></i></a></li>
                         <li><a href="https://twitter.com/mcddx330" target="_blank"><i class="fab fa-twitter"></i></a></li>
                         <li><a href="https://github.com/mcddx330" target="_blank"><i class="fab fa-github"></i></a></li>
                     </ul>
