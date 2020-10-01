@@ -4,6 +4,6 @@ namespace App\Http\Controllers;
 
 class DiaryController extends Controller {
     public function index() {
-        return "ok";
+        return view('diary.index');
     }
 }
