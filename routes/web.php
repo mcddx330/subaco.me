@@ -20,5 +20,9 @@ Route::domain(env('APP_DOMAIN'))->group(function () {
 });
 
 Route::domain('diary.' . env('APP_DOMAIN'))->group(function () {
+    Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
     Route::get('/', ['as' => 'diary.index', 'uses' => 'DiaryController@index']);
 });
