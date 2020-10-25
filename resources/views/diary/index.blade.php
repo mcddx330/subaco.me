@@ -1,5 +1,9 @@
 @extends('diary.layout')
 
 @section('content')
-    ok!
+
+  <div class="">
+    DIARY
+  </div>
+
 @endsection

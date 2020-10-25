@@ -15,14 +15,25 @@
 //    return view('welcome');
 //});
 
+use Illuminate\Support\Facades\Route;
+
 Route::domain(env('APP_DOMAIN'))->group(function () {
     Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
 });
 
 Route::domain('diary.' . env('APP_DOMAIN'))->group(function () {
-    Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->name('dashboard');
 
-    Route::get('/', ['as' => 'diary.index', 'uses' => 'DiaryController@index']);
+        Route::prefix('settings')->as('settings.')->group(function () {
+            Route::get('import', function () {
+                return view('dashboard');
+            })->name('import');
+        });
+    });
+
+    Route::get('/', [\App\Http\Controllers\DiaryController::class, 'index'])
+        ->name('diary.index');
 });
