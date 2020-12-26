@@ -21,9 +21,6 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('new')">
                         新規記事
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('settings.import') }}" :active="request()->routeIs('settings.import')">
-                        はてなブログから取り込み
-                    </x-jet-nav-link>
                 </div>
             </div>
 

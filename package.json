@@ -11,10 +11,13 @@
     },
     "devDependencies": {
         "@tailwindcss/ui": "^0.5.0",
-        "cross-env": "^6.0.0",
-        "laravel-mix": "^5.0.5",
+        "cross-env": "^6.0.3",
+        "laravel-mix": "^5.0.7",
+        "laravel-mix-purgecss": "^6.0.0",
+        "mix-tailwindcss": "^1.2.0",
         "postcss-import": "^12.0.1",
-        "tailwindcss": "^1.3.0",
+        "tailwindcss": "^1.9.6",
         "vue-template-compiler": "^2.6.12"
-    }
+    },
+    "name": "subaco.me"
 }

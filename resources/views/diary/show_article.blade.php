@@ -11,21 +11,14 @@
         ここは固定左ペイン30%くらい
         <br>
         記事は70%右上下スクロール
-
-        <ul class="categories">
-          @foreach ($calendars as $calendar)
-            <li>{{$calendar->date}} ({{$calendar->count}})</li>
-          @endforeach
-        </ul>
       </div>
     </div>
 
     <div class="diary">
-      @foreach($articles as $article)
-        <div class="list">
-          <h5>{{$article->created_at}}</h5>
-          <h3>
-            <a
+      <div class="article">
+        <h5>{{$article->created_at}}</h5>
+        <h2 class="title">
+          <a
               href="{{route(
                 'diary.show_article', [
                   'year' => $article->year,
@@ -34,10 +27,10 @@
                   'slug' => $article->slug
                 ]
              )}}"
-            >{{$article->title}}</a>
-          </h3>
-        </div>
-      @endforeach
+          >{{$article->title}}</a>
+        </h2>
+        {!! $article->body !!}
+      </div>
     </div>
 
   </div>

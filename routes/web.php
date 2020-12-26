@@ -26,14 +26,11 @@ Route::domain('diary.' . env('APP_DOMAIN'))->group(function () {
         Route::get('/dashboard', function () {
             return view('dashboard');
         })->name('dashboard');
-
-        Route::prefix('settings')->as('settings.')->group(function () {
-            Route::get('import', function () {
-                return view('dashboard');
-            })->name('import');
-        });
     });
 
     Route::get('/', [\App\Http\Controllers\DiaryController::class, 'index'])
         ->name('diary.index');
+    Route::get('/{year}/{month}/{day}/{slug}', [\App\Http\Controllers\DiaryController::class, 'showArticle'])
+        ->name('diary.show_article');
+
 });
