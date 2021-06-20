@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss');
+//const tailwindcss = require('tailwindcss');
 require('laravel-mix-purgecss');
 
 /*
@@ -17,15 +17,21 @@ require('laravel-mix-purgecss');
 //    .sass('resources/sass/app.scss', 'public/css');
 
 mix
+    //.postCss('resources/css/app.css', 'public/css', [
+    //    tailwindcss('./tailwind.config.js'),
+    //    //require('postcss-import'),
+    //    //require('tailwindcss'),
+    //])
+    //.purgeCss()
+
     /* raw css */
-    .styles(
-        [
-            //'resources/css/app.css',
-            'resources/css/base.css',
-        ], 'public/css/style.css'
-    )
-    .copy('resources/css/index.css', 'public/css/index.css')
-    .copy('resources/css/diary.css', 'public/css/diary.css')
+    //.styles(
+    //    [
+    //        'resources/css/base.css',
+    //    ], 'public/css/style.css'
+    //)
+    .sass(
+        'resources/css/base.scss', 'public/css/style.css')
 
     /* raw js */
     //.js(
@@ -36,11 +42,4 @@ mix
     //)
 
     .js('resources/js/app.js', 'public/js')
-
-    .postCss('resources/css/app.css', 'public/css', [
-        tailwindcss('./tailwind.config.js'),
-        //require('postcss-import'),
-        //require('tailwindcss'),
-    ])
-    .purgeCss()
 ;

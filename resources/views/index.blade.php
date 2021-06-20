@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>秋本すばこ (Subaco Akimoto)</title>
     <link rel="stylesheet" href="http://mplus-webfonts.sourceforge.jp/mplus_webfonts.css">
-    <link rel="stylesheet" href="@asset('css/app.css')">
-    <link rel="stylesheet" href="@asset('css/index.css')">
+    {{--    <link rel="stylesheet" href="@asset('css/app.css')">--}}
+    <link rel="stylesheet" href="@asset('css/style.css')">
+    {{--    <link rel="stylesheet" href="@asset('css/index.css')">--}}
     <script src="@assert('js/app.js')"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 </head>
-<body>
+<body id="view-index">
 <div class="container">
     <div class="container-body">
         <div class="contents-area">

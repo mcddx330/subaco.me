@@ -9,13 +9,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>diary | {{env('APP_NAME')}}</title>
   <link rel="stylesheet" href="http://mplus-webfonts.sourceforge.jp/mplus_webfonts.css">
-  <link rel="stylesheet" href="@asset('css/app.css')">
+{{--  <link rel="stylesheet" href="@asset('css/app.css')">--}}
   <link rel="stylesheet" href="@asset('css/style.css')">
-  <link rel="stylesheet" href="@asset('css/diary.css')">
+  {{--  <link rel="stylesheet" href="@asset('css/diary.css')">--}}
   <script src="@asset('js/app.js')"></script>
   {{--    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>--}}
 </head>
-<body>
+<body id="view-diary">
 @yield('content')
 </body>
 </html>
