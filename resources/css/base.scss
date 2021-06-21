@@ -1,0 +1,28 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "mplus-2p-light", -apple-system, BlinkMacSystemFont, "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Noto Sans Japanese", "Helvetica Neue", Meiryo, sans-serif;
+  background-color: #EEEEEE;
+}
+
+a {
+  color: #66806D;
+
+  &:visited {
+    color: #6E4D4D;
+  }
+}
+
+.pm0 {
+  padding: 0;
+  margin: 0;
+}
+
+
+@import "index.scss";
+@import "diary.scss";

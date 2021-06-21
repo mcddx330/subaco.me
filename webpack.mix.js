@@ -1,4 +1,6 @@
 const mix = require('laravel-mix');
+//const tailwindcss = require('tailwindcss');
+require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,14 +17,21 @@ const mix = require('laravel-mix');
 //    .sass('resources/sass/app.scss', 'public/css');
 
 mix
+    //.postCss('resources/css/app.css', 'public/css', [
+    //    tailwindcss('./tailwind.config.js'),
+    //    //require('postcss-import'),
+    //    //require('tailwindcss'),
+    //])
+    //.purgeCss()
+
     /* raw css */
-    .styles(
-        [
-            'resources/css/normalize.css',
-            'resources/css/skeleton.css',
-            'resources/css/main.css',
-        ], 'public/css/style.css'
-    )
+    //.styles(
+    //    [
+    //        'resources/css/base.css',
+    //    ], 'public/css/style.css'
+    //)
+    .sass(
+        'resources/css/base.scss', 'public/css/style.css')
 
     /* raw js */
     //.js(
@@ -33,8 +42,4 @@ mix
     //)
 
     .js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        require('postcss-import'),
-        require('tailwindcss'),
-    ])
 ;

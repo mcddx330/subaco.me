@@ -7,10 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>秋本すばこ (Subaco Akimoto)</title>
     <link rel="stylesheet" href="http://mplus-webfonts.sourceforge.jp/mplus_webfonts.css">
+    {{--    <link rel="stylesheet" href="@asset('css/app.css')">--}}
     <link rel="stylesheet" href="@asset('css/style.css')">
+    {{--    <link rel="stylesheet" href="@asset('css/index.css')">--}}
+    <script src="@assert('js/app.js')"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 </head>
-<body>
+<body id="view-index">
 <div class="container">
     <div class="container-body">
         <div class="contents-area">
@@ -47,7 +50,7 @@
 
                 <div class="socials">
                     <ul>
-                        <li><i class="far fa-edit"></i></li>
+                        <li><a href="{{route('diary.index')}}"><i class="far fa-edit"></i></a></li>
                         <li><a href="https://twitter.com/mcddx330" target="_blank"><i class="fab fa-twitter"></i></a></li>
                         <li><a href="https://github.com/mcddx330" target="_blank"><i class="fab fa-github"></i></a></li>
                     </ul>
