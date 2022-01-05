@@ -17,18 +17,16 @@
     <div class="diary">
       <div class="article">
         <h5>{{$article->created_at}}</h5>
-        <h2 class="title">
+        <h1 class="title">
           <a
               href="{{route(
                 'diary.show_article', [
-                  'year' => $article->year,
-                  'month' => $article->month,
-                  'day' => $article->day,
+                  'ymd' => sprintf('%d%d%d', $article->year, $article->month, $article->day),
                   'slug' => $article->slug
                 ]
              )}}"
           >{{$article->title}}</a>
-        </h2>
+        </h1>
         {!! $article->body !!}
       </div>
     </div>
