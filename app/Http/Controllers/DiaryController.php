@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DiaryArticleModel;
 use App\Models\DiaryCategoryModel;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DiaryController extends Controller {
     public function index() {
@@ -13,15 +14,21 @@ class DiaryController extends Controller {
         $calendars = DiaryArticleModel::getCalendars();
 
         return view('diary.index', [
+            'title'               => 'diary',
+            'body_id'             => 'diary',
             'articles'            => $articles,
             'headline_categories' => $headline_categories,
             'calendars'           => $calendars,
         ]);
     }
 
-    public function showArticle($year, $month, $day, $slug) {
-        $article = DiaryArticleModel::getArticleByURIParts($year, $month, $day, $slug);
+    public function showArticle($ymd, $slug) {
+        $article = DiaryArticleModel::getArticleByURIParts($ymd, $slug);
         $calendars = DiaryArticleModel::getCalendars();
+
+        if (!($article instanceof DiaryArticleModel)) {
+            throw new NotFoundHttpException();
+        }
 
         return view('diary.show_article', [
             'article'   => $article,

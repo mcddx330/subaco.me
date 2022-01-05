@@ -30,7 +30,7 @@ Route::domain('diary.' . env('APP_DOMAIN'))->group(function () {
 
     Route::get('/', [\App\Http\Controllers\DiaryController::class, 'index'])
         ->name('diary.index');
-    Route::get('/{year}/{month}/{day}/{slug}', [\App\Http\Controllers\DiaryController::class, 'showArticle'])
+    Route::get('/{ymd}/{slug}', [\App\Http\Controllers\DiaryController::class, 'showArticle'])
         ->name('diary.show_article');
 
 });

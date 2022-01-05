@@ -16,6 +16,10 @@
   {{--    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>--}}
 </head>
 <body id="view-diary">
+<div class="header">
+
+</div>
+@yield('header')
 @yield('content')
 </body>
 </html>

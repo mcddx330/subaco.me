@@ -27,7 +27,8 @@ class DiaryCategoryModel extends Model {
     }
 
     public function scopeActiveHeadline(Builder $builder): Builder {
-        return $builder->where('headline', '=', true);
+        return $builder
+            ->where('headline', '=', true);
     }
 
     /**

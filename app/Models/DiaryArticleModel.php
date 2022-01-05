@@ -97,21 +97,51 @@ class DiaryArticleModel extends Model {
     public static function getLatests() {
         return (new self())
             ->with(['category'])
-            ->desc()
             ->onlyPublished()
+            ->desc()
             ->limit(20)
             ->get();
     }
 
     public static function getCalendars() {
-        return (new self())
-            ->select(DB::raw("DATE_FORMAT(created_at, ' %Y') AS `date`, COUNT(*) AS count"))
-            ->groupBy(DB::raw("DATE_FORMAT(created_at, ' %Y')"))
+        $model = (new self())
+            ->onlyPublished()
             ->orderBy('date', 'DESC')
-            ->get();
+        ;
+
+        $driver = DB::connection()->getConfig()['driver'];
+        switch (true) {
+            case ($driver === 'sqlite'):
+                $model
+                    ->select(DB::raw("STRFTIME(' %Y', created_at) AS `date`, COUNT(*) AS count"))
+                    ->groupBy(DB::raw("STRFTIME(' %Y', created_at)"))
+                ;
+                break;
+            default:
+                $model
+                    ->select(DB::raw("DATE_FORMAT(created_at, ' %Y') AS `date`, COUNT(*) AS count"))
+                    ->groupBy(DB::raw("DATE_FORMAT(created_at, ' %Y')"))
+                ;
+                break;
+        }
+
+        return $model;
     }
 
-    public static function getArticleByURIParts(int $year, int $month, int $day, string $slug) {
+    public static function getArticleByURIParts(int $ymd, string $slug) {
+        $year = $month = $day = 0;
+
+        preg_match('/([0-9]{4})([0-9]{2})([0-9]{2})/u', $ymd, $match);
+        if (isset($match[1])) {
+            $year = $match[1];
+        }
+        if (isset($match[2])) {
+            $year = $match[2];
+        }
+        if (isset($match[3])) {
+            $year = $match[3];
+        }
+
         return (new self())
             ->uris($year, $month, $day, $slug)
             ->asc()

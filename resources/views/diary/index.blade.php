@@ -1,9 +1,8 @@
-@extends('diary.layout')
+@extends('layouts')
+@extends('header')
 
 @section('content')
-
   <div class="contents">
-
     <div class="sidebar">
       <div class="sidebar-contents">
         DIARY
@@ -28,9 +27,7 @@
             <a
               href="{{route(
                 'diary.show_article', [
-                  'year' => $article->year,
-                  'month' => $article->month,
-                  'day' => $article->day,
+                  'ymd' => sprintf('%d%d%d', $article->year, $article->month, $article->day),
                   'slug' => $article->slug
                 ]
              )}}"
@@ -39,7 +36,5 @@
         </div>
       @endforeach
     </div>
-
   </div>
-
 @endsection
