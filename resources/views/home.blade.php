@@ -38,6 +38,9 @@
         <div class="socials">
           <ul>
             <li><a href="https://twitter.com/mcddx330" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/mcddx330" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://mcddx330.hatenadiary.jp" target="_blank"><i class="far fa-newspaper"></i></a></li>
+            <li><a href="https://soundcloud.com/dimbow" target="_blank"><i class="fab fa-soundcloud"></i></a></li>
             <li><a href="https://github.com/mcddx330" target="_blank"><i class="fab fa-github"></i></a></li>
           </ul>
         </div>

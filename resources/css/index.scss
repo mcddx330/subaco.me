@@ -127,9 +127,15 @@
       display: table;
       table-layout: fixed;
       padding: 0;
-      width: 50%;
+      width: 80%;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    @media screen and (max-width: 1024px) {
+      ul {
+        width: 50%;
+      }
     }
 
     @media screen and (orientation: landscape) {
