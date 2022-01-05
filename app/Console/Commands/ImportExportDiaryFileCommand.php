@@ -52,16 +52,6 @@ class ImportExportDiaryFileCommand extends Command {
             foreach ($exploded_raw_contents as $i => $raw_content) {
                 $raw_content = ltrim($raw_content); // 先頭改行削除
 
-                // 本文
-                preg_match("/BODY:\n([\s\S]*)-----/u", $raw_content, $match);
-                $body = null;
-                if (isset($match[1])) {
-                    $body = trim($match[1]);
-                }
-                if (empty($body)) {
-                    continue;
-                }
-
                 // ステータス
                 preg_match("/STATUS:(.+)/u", $raw_content, $match);
                 $current_status = "Draft";
@@ -108,9 +98,22 @@ class ImportExportDiaryFileCommand extends Command {
                 if (isset($match[1])) {
                     $trimed = trim($match[1]);
                     if (!empty($trimed)) {
-                        $title = $trimed;
+                        $title = $this->optimize_string($trimed);
                     }
                 }
+
+                // 本文
+                preg_match("/BODY:\n([\s\S]*)\n-----\n/u", $raw_content, $match);
+                $body = null;
+                if (isset($match[1])) {
+                    $body = trim($match[1]);
+                }
+                if (strlen($body) < 1) {
+                    continue;
+                }
+
+                // 「続きを読む」文削除
+                $body = preg_replace('/-----(|\n)EXTENDED BODY:/u', '', $body);
 
                 $article = DiaryArticleModel::create([
                     'author_id'      => 1,
@@ -119,7 +122,7 @@ class ImportExportDiaryFileCommand extends Command {
                     'type'           => DiaryArticleModel::TYPE_TEXT,
                     'slug'           => $published_date->timestamp,
                     'title'          => $title,
-                    'body'           => $body,
+                    'body'           => $this->parse($body),
                 ]);
                 $article->created_at = $published_date->toString();
                 $article->updated_at = $published_date->toString();
@@ -134,5 +137,116 @@ class ImportExportDiaryFileCommand extends Command {
         }
 
         return 0;
+    }
+
+    private function parse(string $string): string {
+        $string = $this->convert_link($string);
+        $string = $this->convert_br_to_p($string);
+        $string = $this->remove_keyword_link($string);
+        $string = $this->optimize_string($string);
+
+        return $string;
+    }
+
+    private function convert_link(string $string): string {
+        $string = str_replace('http://d.hatena.ne.jp/mcddx30', route('diary.index'), $string);
+        if (!strpos($string, route('diary.index'))) {
+            return $string;
+        }
+
+        preg_match(
+            sprintf(
+                '/%s\/([0-9]{8})#([0-9]{1,99})/u',
+                str_replace('/', '\/', route('diary.index'))
+            ),
+            $string,
+            $match
+        );
+        if (!isset($match[1]) || empty($match[1])) {
+            return $string;
+        }
+
+        $new_link = route('diary.show_article', ['ymd' => $match[1], 'slug' => $match[2]]);
+        $string = str_replace($match[0], $new_link, $string);
+
+        return $string;
+    }
+
+    private function convert_br_to_p(string $string): string {
+        preg_match('/(<br>|<br \/>)/u', $string, $match);
+        if (!isset($match[1]) || empty($match[1])) {
+            return $string;
+        }
+
+
+        $base_slice = explode($match[1], $string);
+        $new_string = '';
+        foreach ($base_slice as $i => $slice) {
+            $slice = preg_replace('/(<p>|<\/p>)/u', '', $slice);
+            $new_string .= sprintf("<p>%s</p>", str_replace("\n", '', $slice));
+            if ($i < count($base_slice) - 1) {
+                $new_string .= "\n";
+            }
+        }
+
+        return $new_string;
+    }
+
+    private function remove_keyword_link(string $string): string {
+        preg_match_all(
+            '/<a.+d.hatena.ne.jp\/keyword\/.+">(.+)<\/a>/u',
+            str_replace('</a>', "</a>\n", $string),
+            $match
+        );
+
+        foreach ($match[0] as $i => $base_string) {
+            if (!isset($match[1][$i]) || empty($match[1][$i])) {
+                continue;
+            }
+            $string = str_replace($base_string, $match[1][$i], $string);
+        }
+
+        return $string;
+    }
+
+    private function optimize_string(string $string): string {
+        $string = $this->remove_empty_tags_p($string);
+        $string = $this->remove_li_wrapped_p($string);
+
+
+        $string = $this->restore_html_entities($string);
+
+        return $string;
+    }
+
+    private function remove_empty_tags_p(string $string): string {
+        return str_replace('<p></p>', '', $string);
+    }
+
+    private function remove_li_wrapped_p(string $string): string {
+        preg_match('/<p><ul><li>(|.+)<\/li><\/ul>(|.+)<\/p>/u', $string, $match);
+        if (!isset($match[1])) {
+            return $string;
+        }
+
+        return str_replace(
+            $match[0],
+            sprintf(
+                "<ul><li>%s</li></ul><p>%s</p>",
+                $match[1],
+                $match[2]
+            ),
+            $string
+        );
+    }
+
+    private function restore_html_entities(string $string): string {
+        $string = str_replace('&quot;', '"', $string);
+        $string = str_replace('&amp;', '&', $string);
+        $string = str_replace('&#039;', "'", $string);
+        $string = str_replace('&lt;', '<', $string);
+        $string = str_replace('&gt;', '>', $string);
+
+        return $string;
     }
 }
