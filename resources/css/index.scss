@@ -59,7 +59,7 @@
   .img-me {
     width: 200px;
     height: 200px;
-    border: 2px solid #BBB;
+    border: 0.25em solid #6E4D4D;
     border-radius: 50%;
     box-shadow: 2px 2px 3px 1px #CCC;
     margin: 2em auto;
@@ -96,29 +96,52 @@
     margin-left: auto;
     margin-right: auto;
 
+    .title:before {
+      content: "★";
+      font-size: x-small;
+      padding: 0 0.5em;
+    }
+
+    .title:after {
+      content: "★";
+      font-size: x-small;
+      padding: 0 0.5em;
+    }
+
+    .title {
+      font-size: x-large;
+    }
+
+    .subtitle {
+      font-size: medium;
+      padding-bottom: 0.5em;
+    }
+
     ul {
       display: block;
       list-style-type: none;
       padding: 0;
       margin: 0;
+      text-align: center;
     }
 
     ul.mb1em {
       margin-bottom: 1em;
     }
 
-
-    .title:before {
-      content: "★";
+    .lists {
+      padding: 0;
     }
 
-    .subtitle {
-      font-size: small;
-      padding-bottom: 1em;
+    .lists li + li {
+      border-left: 1px solid #333;
+      padding-left: 0.25em;
     }
 
     .lists li {
-      padding-top: 0.25em;
+      display: inline-block;
+      font-size: small;
+      margin-top: 0.25em;
     }
   }
 

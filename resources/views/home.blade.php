@@ -17,20 +17,20 @@
       <div class="pm0 contents contents-2">
         <div class="skills">
           <ul class="mb1em">
-            <li class="title">PHP Developer</li>
+            <li class="title">PHP Web Developer</li>
             <ul class="lists">
-              <li>IDE: PhpStorm</li>
-              <li>FW: Laravel</li>
-              <li>DB: MySQL / MariaDB</li>
+              <li>Laravel</li>
+              <li>MariaDB</li>
+              <li>PhpStorm</li>
             </ul>
           </ul>
           <ul>
             <li class="title">Songwriter</li>
             <li class="subtitle">( as <a href="http://monobeat.info">STUDiO MONOBEAT</a> )</li>
             <ul class="lists">
-              <li>Write: Logic Pro</li>
-              <li>Edit: Studio One</li>
-              <li>Fix: Adobe Audition / iZotope RX</li>
+              <li>Logic Pro</li>
+              <li>Studio One</li>
+              <li>iZotope RX</li>
             </ul>
           </ul>
         </div>

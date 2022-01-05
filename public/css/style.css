@@ -126,7 +126,7 @@ header .links .links-body ul li {
 #view-index .img-me {
   width: 200px;
   height: 200px;
-  border: 2px solid #BBB;
+  border: 0.25em solid #6E4D4D;
   border-radius: 50%;
   box-shadow: 2px 2px 3px 1px #CCC;
   margin: 2em auto;
@@ -162,28 +162,52 @@ header .links .links-body ul li {
   margin-right: auto;
 }
 
+#view-index .skills .title:before {
+  content: "\2605";
+  font-size: x-small;
+  padding: 0 0.5em;
+}
+
+#view-index .skills .title:after {
+  content: "\2605";
+  font-size: x-small;
+  padding: 0 0.5em;
+}
+
+#view-index .skills .title {
+  font-size: x-large;
+}
+
+#view-index .skills .subtitle {
+  font-size: medium;
+  padding-bottom: 0.5em;
+}
+
 #view-index .skills ul {
   display: block;
   list-style-type: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 #view-index .skills ul.mb1em {
   margin-bottom: 1em;
 }
 
-#view-index .skills .title:before {
-  content: "\2605";
+#view-index .skills .lists {
+  padding: 0;
 }
 
-#view-index .skills .subtitle {
-  font-size: small;
-  padding-bottom: 1em;
+#view-index .skills .lists li + li {
+  border-left: 1px solid #333;
+  padding-left: 0.25em;
 }
 
 #view-index .skills .lists li {
-  padding-top: 0.25em;
+  display: inline-block;
+  font-size: small;
+  margin-top: 0.25em;
 }
 
 #view-index .socials ul {
