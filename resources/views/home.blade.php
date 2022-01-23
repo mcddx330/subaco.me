@@ -16,7 +16,7 @@
 
       <div class="pm0 contents contents-2">
         <div class="skills">
-          <ul class="mb1em">
+          <ul>
             <li class="title">PHP Web Developer</li>
             <ul class="lists">
               <li>Laravel</li>
@@ -26,7 +26,7 @@
           </ul>
           <ul>
             <li class="title">Songwriter</li>
-            <li class="subtitle">( as <a href="http://monobeat.info">STUDiO MONOBEAT</a> )</li>
+            <li class="subtitle">(<a href="http://monobeat.info">STUDiO MONOBEAT</a>)</li>
             <ul class="lists">
               <li>Logic Pro</li>
               <li>Studio One</li>

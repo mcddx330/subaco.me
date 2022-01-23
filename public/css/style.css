@@ -1,7 +1,5 @@
 @charset "UTF-8";
-
-html,
-body {
+html, body {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -9,16 +7,16 @@ body {
 }
 
 body {
-  font-family: "mplus-2p-light", -apple-system, BlinkMacSystemFont, "\30D2\30E9\30AE\30CE\89D2\30B4   ProN W3", "\30D2\30E9\30AE\30CE\89D2\30B4   ProN", "Noto Sans Japanese", "Helvetica Neue", Meiryo, sans-serif;
-  background-color: #EEEEEE;
+  font-family: "mplus-2p-light", -apple-system, BlinkMacSystemFont, "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Noto Sans Japanese", "Helvetica Neue", Meiryo, sans-serif;
+  color: #0D0D0D;
+  background-color: #F2EDE4;
 }
 
 a {
-  color: #66806D;
+  color: #BF6E3F;
 }
-
 a:visited {
-  color: #6E4D4D;
+  color: #A63117;
 }
 
 .pm0 {
@@ -30,18 +28,15 @@ header {
   width: 100%;
   height: 3em;
 }
-
 header .links {
   height: 100%;
   width: 25%;
 }
-
 header .links .links-body {
   height: 100%;
   display: table;
   text-align: center;
 }
-
 header .links .links-body ul {
   display: flex;
   list-style: none;
@@ -50,7 +45,6 @@ header .links .links-body ul {
   text-decoration: none;
   color: #000;
 }
-
 header .links .links-body ul li {
   padding: 3em;
 }
@@ -60,53 +54,43 @@ header .links .links-body ul li {
   width: 100%;
   height: 100%;
 }
-
 #view-index .container-body {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
-
 #view-index .container {
   width: 50%;
   /* 通常幅 */
 }
-
 @media screen and (orientation: portrait), (max-width: 800px) {
   #view-index {
     /* 縦長表示 or 横幅800px以内 */
   }
-
   #view-index .container {
     width: 100%;
   }
 }
-
 @media screen and (orientation: landscape) and (max-width: 1024px) {
   #view-index {
     /* 横幅1024px以内 */
   }
-
   #view-index .container {
     width: 90%;
   }
 }
-
 @media screen and (orientation: landscape) {
   #view-index {
     /* 横長表示 */
   }
-
   #view-index .container {
     margin-left: auto;
     margin-right: auto;
   }
-
   #view-index .contents-1 {
     display: inline-block;
     width: 48%;
   }
-
   #view-index .contents-2 {
     display: inline-block;
     width: 48%;
@@ -116,68 +100,56 @@ header .links .links-body ul li {
     font-size: 0;
   }
 
-  #view-index .contents-1,
-  #view-index .contents-2 {
+  #view-index .contents-1, #view-index .contents-2 {
     font-size: medium;
-    vertical-align: bottom;
+    vertical-align: middle;
   }
 }
-
 #view-index .img-me {
   width: 200px;
   height: 200px;
-  border: 0.25em solid #6E4D4D;
+  border: 0.25em solid #BF6E3F;
   border-radius: 50%;
   box-shadow: 2px 2px 3px 1px #CCC;
-  margin: 2em auto;
+  margin: 1em auto;
 }
-
 #view-index .img-me img {
   border-radius: 50%;
   width: 100%;
 }
-
 #view-index .name-area p {
   padding: 0;
   margin: 0;
 }
-
 #view-index .name-area p.name {
   font-size: x-large;
 }
-
 @media screen and (orientation: portrait) {
   #view-index .name-area p.name-roman {
     margin-bottom: 1em;
   }
 }
-
 #view-index .name-area p.name-roman {
   font-size: small;
 }
-
 #view-index .skills {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
-
 #view-index .skills .title:before {
-  content: "\2605";
+  content: "★";
   font-size: x-small;
   padding: 0 0.5em;
 }
-
 #view-index .skills .title:after {
-  content: "\2605";
+  content: "★";
   font-size: x-small;
   padding: 0 0.5em;
 }
-
 #view-index .skills .title {
   font-size: x-large;
 }
-
 #view-index .skills .subtitle {
   font-size: medium;
   padding-bottom: 0.5em;
@@ -189,27 +161,25 @@ header .links .links-body ul li {
   padding: 0;
   margin: 0;
   text-align: center;
+  margin-bottom: 1.5em;
 }
 
-#view-index .skills ul.mb1em {
-  margin-bottom: 1em;
+#view-index .skills ul:last-child {
+  border-bottom: none;
 }
 
 #view-index .skills .lists {
   padding: 0;
 }
-
 #view-index .skills .lists li + li {
   border-left: 1px solid #333;
   padding-left: 0.25em;
 }
-
 #view-index .skills .lists li {
   display: inline-block;
   font-size: small;
   margin-top: 0.25em;
 }
-
 #view-index .socials ul {
   display: table;
   table-layout: fixed;
@@ -218,22 +188,18 @@ header .links .links-body ul li {
   margin-left: auto;
   margin-right: auto;
 }
-
 @media screen and (max-width: 1024px) {
   #view-index .socials ul {
     width: 50%;
   }
 }
-
 @media screen and (orientation: landscape) {
   #view-index .socials .socials ul {
     width: 75%;
   }
 }
-
 #view-index .socials li {
   display: table-cell;
   vertical-align: middle;
   font-size: xx-large;
 }
-
