@@ -14,8 +14,12 @@ body {
 a {
   color: #BF6E3F;
 
-  &:visited {
+  &:hover {
     color: #A63117;
+  }
+
+  &:visited {
+    color: #BF6E3F;
   }
 }
 
