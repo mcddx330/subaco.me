@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
   <div class="container-body">
-    <div class="contents-area">
-      <div class="pm0 contents contents-1">
+    <div class="card">
+      <div class="pm0 pd1 contents contents-1">
         <div class="img-me">
           <img src="{{url('/img/me.png')}}" alt="me">
         </div>
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="pm0 contents contents-2">
+      <div class="pm0 pd1 contents contents-2">
         <div class="skills">
           <ul>
             <li class="title">PHP Web Developer</li>
