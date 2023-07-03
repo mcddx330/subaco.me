@@ -1,187 +1,206 @@
 #view-index {
-  .container {
-    display: table;
-    width: 50%; /* 通常幅 */
-    height: 100%;
-  }
-
-
-  .container-body {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-
-    .card {
-      border-radius: 10px;
-      -moz-box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
-      -webkit-box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
-      -ms-box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
-      box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
-    }
-  }
-
-  @media screen and (orientation: portrait), (max-width: 800px) {
-    /* 縦長表示 or 横幅800px以内 */
     .container {
-      width: 100%;
+        display: table;
+        width: 50%; /* 通常幅 */
+        height: 100%;
     }
 
-    .card {
-      width: 80%;
-      margin: auto;
-    }
-  }
-
-  @media screen and (orientation: landscape) and (max-width: 1024px) {
-    /* 横幅1024px以内 */
-    .container {
-      width: 90%;
-    }
-  }
-
-  @media screen and (orientation: landscape) {
-    /* 横長表示 */
-    .container {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contents-1 {
-      display: inline-block;
-      width: 48%;
-    }
-
-    .contents-2 {
-      display: inline-block;
-      width: 48%;
-    }
 
     .container-body {
-      font-size: 0;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+
+        .card {
+            border-radius: 10px;
+            -moz-box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
+            -webkit-box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
+            -ms-box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
+            box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
+        }
+
+        .contents {
+            font-size: medium;
+        }
+
+        hr {
+            width: 70%;
+            border-top: 2px dashed rgba(166, 49, 23, 0.25);
+        }
     }
 
-    .contents-1, .contents-2 {
-      font-size: medium;
-      vertical-align: middle;
-    }
-  }
+    @media screen and (orientation: portrait), (max-width: 800px) {
+        /* 縦長表示 or 横幅800px以内 */
+        .container {
+            width: 100%;
+        }
 
-  .img-me {
-    width: 200px;
-    height: 200px;
-    border: 0.25em solid #0D0D0D;
-    border-radius: 50%;
-    box-shadow: 2px 2px 3px 1px #CCC;
-    margin: auto;
-
-    img {
-      border-radius: 50%;
-      width: 100%;
-    }
-  }
-
-  .name-area {
-    p {
-      padding: 0;
-      margin: 0;
+        .card {
+            width: 80%;
+            margin: auto;
+        }
     }
 
-    p.name {
-      font-size: x-large;
-    }
-
-    @media screen and (orientation: portrait) {
-      p.name-roman {
-        margin-bottom: 1em;
-      }
-    }
-
-    p.name-roman {
-      font-size: medium;
-    }
-  }
-
-  .skills {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-
-    .title:before {
-      content: "★";
-      font-size: x-small;
-      padding: 0 0.5em;
-    }
-
-    .title:after {
-      content: "★";
-      font-size: x-small;
-      padding: 0 0.5em;
-    }
-
-    .title {
-      font-size: x-large;
-    }
-
-    .subtitle {
-      font-size: medium;
-      padding-bottom: 0.5em;
-    }
-
-    ul {
-      display: block;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      text-align: center;
-      margin-bottom: 1.5em;
-    }
-
-    ul:last-child {
-      border-bottom: none;
-    }
-
-    .lists {
-      padding: 0;
-    }
-
-    .lists li + li {
-      border-left: 1px solid #333;
-      padding-left: 0.25em;
-    }
-
-    .lists li {
-      display: inline-block;
-      font-size: small;
-      margin-top: 0.25em;
-    }
-  }
-
-  .socials {
-    ul {
-      display: table;
-      table-layout: fixed;
-      padding: 0;
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media screen and (max-width: 1024px) {
-      ul {
-        width: 50%;
-      }
+    @media screen and (orientation: landscape) and (max-width: 1024px) {
+        /* 横幅1024px以内 */
+        .container {
+            width: 90%;
+        }
     }
 
     @media screen and (orientation: landscape) {
-      .socials ul {
-        width: 75%;
-      }
+        /* 横長表示 */
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contents-1 {
+            display: inline-block;
+            width: 48%;
+        }
+
+        .contents-2 {
+            display: inline-block;
+            width: 48%;
+        }
+
+        .container-body {
+            font-size: 0;
+        }
+
+        .contents-1, .contents-2 {
+            vertical-align: middle;
+        }
     }
 
-    li {
-      display: table-cell;
-      vertical-align: middle;
-      font-size: xx-large;
+    .img-me {
+        width: 200px;
+        height: 200px;
+        border: 0.25em solid #0D0D0D;
+        border-radius: 50%;
+        box-shadow: 2px 2px 3px 1px #CCC;
+        margin: auto;
+
+        img {
+            border-radius: 50%;
+            width: 100%;
+        }
     }
-  }
+
+    .name-area {
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        p.name {
+            font-size: x-large;
+        }
+
+        @media screen and (orientation: portrait) {
+            p.name-roman {
+                margin-bottom: 1em;
+            }
+        }
+
+        p.name-roman {
+            font-size: medium;
+        }
+    }
+
+    .title {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        ul {
+            display: block;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            margin-bottom: 1.0em;
+        }
+
+        .main:before {
+            content: "★";
+            font-size: x-small;
+            padding: 0 0.5em;
+        }
+
+        .main:after {
+            content: "★";
+            font-size: x-small;
+            padding: 0 0.5em;
+        }
+
+        .main {
+            font-size: x-large;
+        }
+
+        .sub {
+            font-size: medium;
+            padding-bottom: 0.5em;
+        }
+    }
+
+    .lists {
+        padding: 0;
+
+        ul {
+            display: block;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        ul:last-child {
+            border-bottom: none;
+        }
+
+
+        .lists li + li {
+            border-left: 1px solid #333;
+            padding-left: 0.25em;
+        }
+
+        .lists li {
+            display: inline-block;
+            font-size: small;
+            margin-top: 0.25em;
+        }
+    }
+
+
+    .socials {
+        ul {
+            display: table;
+            table-layout: fixed;
+            padding: 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media screen and (max-width: 1024px) {
+            ul {
+                width: 50%;
+            }
+        }
+
+        @media screen and (orientation: landscape) {
+            .socials ul {
+                width: 75%;
+            }
+        }
+
+        li {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: xx-large;
+        }
+    }
 }
