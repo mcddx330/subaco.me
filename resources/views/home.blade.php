@@ -49,7 +49,14 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/mcddx330" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/mcddx330" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:monobeat.030@gmail.com" target="_blank">
+                                    <i class="far fa-envelope"></i>
+                                </a>
                             </li>
                         </ul>
                     </div>
