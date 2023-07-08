@@ -49,6 +49,11 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="https://www.youtube.com/channel/UCSoMm43dA2LYm8ExwJQaCBA" target="_blank">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="https://github.com/mcddx330" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
