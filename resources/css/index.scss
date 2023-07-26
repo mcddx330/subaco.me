@@ -3,6 +3,9 @@
         display: table;
         width: 50%; /* 通常幅 */
         height: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .container-body {
@@ -28,32 +31,28 @@
         }
     }
 
-    @media screen and (orientation: portrait), (max-width: 800px) {
+    @media screen and (orientation: portrait) and (max-width: 800px) {
         /* 縦長表示 or 横幅800px以内 */
         .container {
             width: 100%;
         }
 
         .card {
-            width: 80%;
+            width: 100%;
             margin: auto;
+            box-shadow: none !important;
         }
     }
 
-    @media screen and (orientation: landscape) and (max-width: 1024px) {
-        /* 横幅1024px以内 */
+    @media screen and (orientation: portrait) and (max-width: 1024px) {
+        /* 縦長表示 or 横幅800px以内 */
         .container {
-            width: 90%;
+            width: 80%;
         }
     }
 
     @media screen and (orientation: landscape) {
         /* 横長表示 */
-        .container {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         .contents-1 {
             display: inline-block;
             width: 48%;
@@ -178,15 +177,29 @@
         ul {
             display: table;
             table-layout: fixed;
+            text-align: center;
             padding: 0;
             width: 80%;
             margin-left: auto;
             margin-right: auto;
         }
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 640px) {
             ul {
-                width: 50%;
+                width: 80%;
+            }
+        }
+
+        @media screen and (orientation: portrait) and (max-width: 520px) {
+            ul {
+                width: 80%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            li {
+                width: 25%;
             }
         }
 
