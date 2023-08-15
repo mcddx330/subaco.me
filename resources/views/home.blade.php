@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="pm0 pd1 contents contents-1">
                     <div class="img-me">
-                        <img src="{{url('/img/me.png')}}" alt="me">
+                        <img src="/img/me.png?{{time()}}" alt="me">
                     </div>
                     <div class="name-area">
                         <p class="name">秋本すばこ</p>
