@@ -87,7 +87,7 @@
                                 (mix to publish)
                             </li>
                             <br>
-                            <li>PhpStorm + Laravel</li>
+                            <li>PhpStorm + Laravel + MySQL + Redis</li>
                         </ul>
                     </div>
                 </div>
