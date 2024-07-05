@@ -1,7 +1,7 @@
 #view-index {
     .container {
         display: table;
-        width: 50%; /* 通常幅 */
+        max-width: 960px;
         height: 100%;
 
         margin-left: auto;
@@ -31,6 +31,19 @@
         }
     }
 
+    @media screen and (orientation: portrait) {
+        .container {
+            max-width: 480px;
+        }
+    }
+
+    @media screen and (orientation: portrait) and (max-width: 1024px) {
+        /* 縦長表示 or 横幅800px以内 */
+        .container {
+            max-width: 480px;
+        }
+    }
+
     @media screen and (orientation: portrait) and (max-width: 800px) {
         /* 縦長表示 or 横幅800px以内 */
         .container {
@@ -41,13 +54,6 @@
             width: 100%;
             margin: auto;
             box-shadow: none !important;
-        }
-    }
-
-    @media screen and (orientation: portrait) and (max-width: 1024px) {
-        /* 縦長表示 or 横幅800px以内 */
-        .container {
-            width: 80%;
         }
     }
 
