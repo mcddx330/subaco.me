@@ -18,8 +18,7 @@
                     <div class="title">
                         <ul>
                             <li class="main">Songwriter</li>
-                            <li class="submain">from <a href="http://monobeat.info">STUDiO MONOBEAT</a></li>
-{{--                            <li class="sub">ex: <a href="http://monobeat.info">Maple Blue</a></li>--}}
+                            <li class="sub">( <a href="https://mapleblue.me">MAPLE BLUE RECORDS</a> )</li>
                         </ul>
                         <ul>
                             <li class="main">Web Developer</li>
