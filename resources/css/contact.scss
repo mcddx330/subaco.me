@@ -1,0 +1,15 @@
+#view-contact {
+    .container {
+        display: table;
+        min-width: 640px !important;
+        max-width: 960px !important;
+        height: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mb-12 .form-control {
+        width: 80%;
+    }
+}
