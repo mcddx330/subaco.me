@@ -1,11 +1,3 @@
-@font-face {
-    font-family: 'M+ 2p medium';
-    src: url('../fonts/mplus-2p-medium-sub.eot');
-    src: url('../fonts/mplus-2p-medium-sub.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/mplus-2p-medium-sub.woff') format('woff'),
-    url('../fonts/mplus-2p-medium-sub.ttf') format('truetype');
-}
-
 html, body {
     width: 100%;
     height: 100%;
@@ -14,7 +6,9 @@ html, body {
 }
 
 body {
-    font-family: "M+ 2p medium", -apple-system, BlinkMacSystemFont, "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Noto Sans Japanese", "Helvetica Neue", Arial, sans-serif;
+    font-family: "M PLUS 1p", "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Noto Sans Japanese", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
     color: #0D0D0D;
     background-color: #F2EDE4;
 }

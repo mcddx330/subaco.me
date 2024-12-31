@@ -8,6 +8,9 @@
     >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{$title}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{mix('css/style.css').'?'.time()}}">
     <script src="{{mix('js/app.js').'?'.time()}}"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
