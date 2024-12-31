@@ -22,5 +22,3 @@ Route::domain(env('APP_DOMAIN'))->group(function () {
     Route::get('/contact', ['as' => 'contact', 'uses' => 'IndexController@contact']);
     Route::post('/contact/submit', ['as' => 'contact.submit', 'uses' => 'IndexController@submitContact']);
 });
-
-});
