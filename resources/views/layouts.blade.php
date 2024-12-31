@@ -8,7 +8,6 @@
     >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{$title}}</title>
-    <link rel="stylesheet" href="http://mplus-webfonts.sourceforge.jp/mplus_webfonts.css">
     <link rel="stylesheet" href="{{mix('css/style.css').'?'.time()}}">
     <script src="{{mix('js/app.js').'?'.time()}}"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
