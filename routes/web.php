@@ -11,10 +11,6 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 use Illuminate\Support\Facades\Route;
 
 Route::domain(env('APP_DOMAIN'))->group(function () {

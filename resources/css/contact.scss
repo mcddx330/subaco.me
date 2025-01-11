@@ -9,7 +9,47 @@
         margin-right: auto;
     }
 
-    .mb-12 .form-control {
-        width: 80%;
+    .card {
+        padding: 1.0em;
+    }
+
+    .form-group {
+        padding: 0.5em;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    // https://pure-css.github.io/buttons/
+    .pure-button {
+        border-radius: 0.5em;
+    }
+    .button-success {
+        color: white;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        background: rgb(28, 184, 65);
+    }
+
+    .alert {
+        border: 1px solid #d3d3d3;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: #f8f8f8;
+        color: #333;
+        border-radius: 4px;
+
+        &.success {
+            background-color: #8BC34A;
+        }
+
+        &.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        li {
+            list-style: none;
+        }
     }
 }

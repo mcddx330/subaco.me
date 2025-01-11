@@ -1,43 +1,41 @@
 @extends('layouts')
 
 @section('content')
-    <div class="container">
+    <div class="container pure-g">
         <div class="container-body">
             <div class="card">
                 @if (session('success'))
-                    <div class="alert alert-success">
+                    <div class="alert success">
                         {{ session('success') }}
                     </div>
                 @endif
 
-                <div class="pm0 pd1 contents">
-                    <h1>お問い合わせ</h1>
+                @if ($errors->any())
+                    <div class="alert alert-error">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </div>
+                @endif
 
-                    @if (session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}
-                        </div>
-                    @endif
+                <form action="{{ route('contact.submit') }}" method="POST" class="pure-form pure-form-stacked">
+                    @csrf
+                    <fieldset>
+                        <legend>お問い合わせフォーム</legend>
 
-                    <form method="POST" action="{{ route('contact.submit') }}">
-                        @csrf
-
-                        <div class="mb-12">
-                            <label for="name" class="form-label">名前</label>
-                        </div>
-                        <div class="mb-12">
-                            <input type="text" name="name" id="name" class="form-control" required>
-                        </div>
-
-                        <div class="mb-12">
-                            <label for="email" class="form-label">返信用メールアドレス</label>
-                        </div>
-                        <div class="mb-12">
-                            <input type="email" name="email" id="email" class="form-control" required>
+                        <div class="form-group">
+                            <label for="name">お名前</label>
+                            <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}"
+                                   required>
                         </div>
 
-                        <div class="mb-12">
-                            <label for="type" class="form-label">お問い合わせ種類</label>
+                        <div class="form-group">
+                            <label for="email">返信用メールアドレス（必要な場合）</label>
+                            <input type="email" id="email" name="email" class="form-control" value="{{ old('email') }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="type">お問い合わせ種別</label>
                         </div>
                         <div class="mb-12">
                             <select name="type" id="type" class="form-control form-select" required>
@@ -47,24 +45,28 @@
                                     @if($type === \App\Enum\ContactType::G) selected @endif
                                 >{{ \App\Enum\ContactType::G->value }}</option>
                                 <option
-                                    value="{{ \App\Enum\ContactType::MB->name }}"
-                                    @if($type === \App\Enum\ContactType::MB) selected @endif
-                                >{{ \App\Enum\ContactType::MB->value }}</option>
+                                    value="{{ \App\Enum\ContactType::MBR->name }}"
+                                    @if($type === \App\Enum\ContactType::MBR) selected @endif
+                                >{{ \App\Enum\ContactType::MBR->value }}</option>
                             </select>
                         </div>
 
-                        <div class="mb-12">
-                            <label for="message" class="form-label">お問い合わせ内容</label>
-                        </div>
-                        <div class="mb-12">
-                            <textarea name="message" id="message" class="form-control" rows="5" required></textarea>
+                        <div class="form-group">
+                            <label for="message">メッセージ</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-control"
+                                rows="5"
+                                value="{{ old('message') }}"
+                                required
+                            ></textarea>
                         </div>
 
-                        <div>
-                            <button type="submit" class="btn btn-primary">送信</button>
-                        </div>
-                    </form>
-                </div>
+                        <a href="/" class="pure-button button-success">戻る</a>
+                        <button type="submit" class="pure-button pure-button-primary">送信</button>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </div>

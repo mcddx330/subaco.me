@@ -51,8 +51,8 @@ header {
                 display: flex;
                 list-style: none;
                 width: 20%;
-                //display: table-cell;
-                //vertical-align: middle;
+                display: table-cell;
+                vertical-align: middle;
 
                 font-size: x-large;
                 text-decoration: none;
@@ -62,14 +62,14 @@ header {
                     padding: 3em;
                 }
 
-                //&:before {
-                //  width: 50%;
-                //}
-                //
-                //&:hover {
-                //  border-bottom: 3px solid #000;
-                //  padding-top: 3px;
-                //}
+                &:before {
+                    width: 50%;
+                }
+
+                &:hover {
+                    border-bottom: 3px solid #000;
+                    padding-top: 3px;
+                }
             }
         }
     }
@@ -145,15 +145,11 @@ header {
         width: 48%;
     }
 
-    .container-body {
-        font-size: 0;
-    }
-
     .contents-1, .contents-2 {
         vertical-align: middle;
     }
 }
 
-@import "index.scss";
-@import "contact.scss";
+@import "./index.scss";
+@import "./contact.scss";
 

@@ -5,19 +5,18 @@ namespace App\Enum;
 enum ContactType: string
 {
     case G = '一般';
-    case MB = 'MAPLE BLUE RECORDS';
+    case MBR = 'MAPLE BLUE RECORDS';
+//    case MBS = 'THE MAPLE BLUE SHOW';
 
     public function label(): string
     {
         return match($this) {
             self::G => self::G->value,
-            self::MB => self::MB->value,
+            self::MBR => self::MBR->value,
+//            self::MBS => self::MBS->value,
         };
     }
 
-    /**
-     * すべての列挙値を返却するメソッド
-     */
     public static function all(): array
     {
         return array_map(

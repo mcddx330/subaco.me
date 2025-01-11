@@ -58,7 +58,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:monobeat.030@gmail.com" target="_blank">
+                                <a href="/contact">
                                     <i class="far fa-envelope"></i>
                                 </a>
                             </li>
