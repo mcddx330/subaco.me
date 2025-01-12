@@ -39,19 +39,18 @@
     "file": "assets/fa-regular-400-DGzu1beS.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
-  "resources/css/app.css": {
-    "file": "assets/app-C-bCh5WL.css",
-    "src": "resources/css/app.css",
+  "resources/css/base.scss": {
+    "file": "assets/base-C-bCh5WL.css",
+    "src": "resources/css/base.scss",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-Di1MvsrG.js",
+    "file": "assets/app-Db3KmDis.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-DLDhmM3v.css",
-      "assets/app-C-bCh5WL.css"
+      "assets/app-DLDhmM3v.css"
     ],
     "assets": [
       "assets/fa-brands-400-DnkPfk3o.eot",
