@@ -1,0 +1,292 @@
+@charset "UTF-8";
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "M PLUS 1p", "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Noto Sans Japanese", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #0D0D0D;
+  background-color: #F2EDE4;
+}
+
+a {
+  color: #BF6E3F;
+}
+a:hover {
+  color: #A63117;
+}
+a:visited {
+  color: #BF6E3F;
+}
+
+.pm0 {
+  padding: 0;
+  margin: 0;
+}
+
+.pd1 {
+  padding: 1em 0;
+}
+
+header {
+  width: 100%;
+  height: 3em;
+}
+header .links {
+  height: 100%;
+  width: 25%;
+}
+header .links .links-body {
+  height: 100%;
+  display: table;
+  text-align: center;
+}
+header .links .links-body ul {
+  display: flex;
+  list-style: none;
+  width: 20%;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: x-large;
+  text-decoration: none;
+  color: #000;
+}
+header .links .links-body ul li {
+  padding: 3em;
+}
+header .links .links-body ul:before {
+  width: 50%;
+}
+header .links .links-body ul:hover {
+  border-bottom: 3px solid #000;
+  padding-top: 3px;
+}
+
+.container {
+  display: table;
+  max-width: 960px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-body {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.container-body .card {
+  border-radius: 10px;
+  -moz-box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
+  -webkit-box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
+  -ms-box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
+  box-shadow: 0px 0px 20px -3px rgba(166, 49, 23, 0.5);
+}
+.container-body .contents {
+  font-size: medium;
+}
+.container-body hr {
+  width: 70%;
+  border-top: 2px dashed rgba(166, 49, 23, 0.25);
+}
+
+@media screen and (orientation: portrait) {
+  .container {
+    max-width: 480px;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 1024px) {
+  /* 縦長表示 or 横幅800px以内 */
+  .container {
+    max-width: 480px;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 800px) {
+  /* 縦長表示 or 横幅800px以内 */
+  .container {
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+    margin: auto;
+    box-shadow: none !important;
+  }
+}
+@media screen and (orientation: landscape) {
+  /* 横長表示 */
+  .contents-1 {
+    display: inline-block;
+    width: 48%;
+  }
+  .contents-2 {
+    display: inline-block;
+    width: 48%;
+  }
+  .contents-1, .contents-2 {
+    vertical-align: middle;
+  }
+}
+#view-index .img-me {
+  width: 200px;
+  height: 200px;
+  border: 0.1em solid #0D0D0D;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px 1px #CCC;
+  margin: auto;
+}
+#view-index .img-me img {
+  border-radius: 50%;
+  width: 100%;
+}
+#view-index .name-area p {
+  padding: 0;
+  margin: 0;
+}
+#view-index .name-area p.name {
+  font-size: x-large;
+}
+@media screen and (orientation: portrait) {
+  #view-index .name-area p.name-roman {
+    margin-bottom: 1em;
+  }
+}
+#view-index .name-area p.name-roman {
+  font-size: medium;
+}
+#view-index .title {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#view-index .title ul {
+  display: block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 1em;
+}
+#view-index .title .main:before {
+  content: "★";
+  font-size: x-small;
+  padding: 0 0.5em;
+}
+#view-index .title .main:after {
+  content: "★";
+  font-size: x-small;
+  padding: 0 0.5em;
+}
+#view-index .title .main {
+  font-size: x-large;
+}
+#view-index .title .sub {
+  font-size: medium;
+  padding-bottom: 0.5em;
+}
+#view-index .lists {
+  padding: 0;
+}
+#view-index .lists ul {
+  display: block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+#view-index .lists ul:last-child {
+  border-bottom: none;
+}
+#view-index .lists .lists li + li {
+  border-left: 1px solid #333;
+  padding-left: 0.25em;
+}
+#view-index .lists .lists li {
+  display: inline-block;
+  font-size: small;
+  margin-top: 0.25em;
+}
+#view-index .socials ul {
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+  padding: 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 640px) {
+  #view-index .socials ul {
+    width: 80%;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 520px) {
+  #view-index .socials ul {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #view-index .socials li {
+    width: 25%;
+  }
+}
+@media screen and (orientation: landscape) {
+  #view-index .socials .socials ul {
+    width: 75%;
+  }
+}
+#view-index .socials li {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: xx-large;
+}
+
+#view-contact .container {
+  display: table;
+  min-width: 640px !important;
+  max-width: 960px !important;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#view-contact .card {
+  padding: 1em;
+}
+#view-contact .form-group {
+  padding: 0.5em;
+}
+#view-contact .form-control {
+  width: 100%;
+}
+#view-contact .pure-button {
+  border-radius: 0.5em;
+}
+#view-contact .button-success {
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(28, 184, 65);
+}
+#view-contact .alert {
+  border: 1px solid #d3d3d3;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f8f8f8;
+  color: #333;
+  border-radius: 4px;
+}
+#view-contact .alert.success {
+  background-color: #8BC34A;
+}
+#view-contact .alert.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+#view-contact .alert li {
+  list-style: none;
+}
