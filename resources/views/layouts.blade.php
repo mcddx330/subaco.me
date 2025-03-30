@@ -17,5 +17,13 @@
 <body id="view-{{ $body_id }}">
 @yield('header')
 @yield('content')
+
+@if ($body_id === 'contact')
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+@endif
 </body>
 </html>

@@ -54,6 +54,22 @@ class IndexController extends Controller {
             'type' => 'お問い合わせ種別',
         ]);
 
+        $cf_data = [
+            'response' => $request->get('cf-turnstile-response'),
+            'secret' => env('CLOUDFLARE_TURNSTILE_SECRET'),
+        ];
+
+        $cf_response = Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', $cf_data);
+        if (!$cf_response->successful()) {
+            Session::flash('error', '送信時にエラーが発生しました。');
+            return redirect(route('contact'))->withInput();
+        }
+        $result = $cf_response->json();
+        if (!$result['success']) {
+            Session::flash('error', '送信時にエラーが発生しました。');
+            return redirect(route('contact'))->withInput();
+        }
+
 
         $type = strtoupper($request->get('type'));
         switch (true) {
