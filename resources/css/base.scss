@@ -1,3 +1,11 @@
+@use '@fortawesome/fontawesome-free/css/fontawesome.css';
+@use '@fortawesome/fontawesome-free/css/brands.css';   // fab
+@use '@fortawesome/fontawesome-free/css/regular.css';  // far
+@use '@fortawesome/fontawesome-free/css/solid.css';    // fas
+
+@use "./index.scss";
+@use "./contact.scss";
+
 html, body {
     width: 100%;
     height: 100%;
@@ -114,22 +122,33 @@ header {
 }
 
 @media screen and (orientation: portrait) and (max-width: 1024px) {
-    /* 縦長表示 or 横幅800px以内 */
     .container {
         max-width: 480px;
     }
 }
 
-@media screen and (orientation: portrait) and (max-width: 800px) {
-    /* 縦長表示 or 横幅800px以内 */
+@media screen and (orientation: portrait) and (max-width: 768px) {
     .container {
-        width: 100%;
+        min-width: 640px !important;
+        max-width: 768px !important;
     }
+
+    .card {
+        padding: 0 !important;
+    }
+
 
     .card {
         width: 100%;
         margin: auto;
         box-shadow: none !important;
+    }
+}
+
+@media screen and (orientation: portrait) and (max-width: 480px) {
+    .container {
+        min-width: 360px !important;
+        max-width: 480px !important;
     }
 }
 
@@ -149,7 +168,3 @@ header {
         vertical-align: middle;
     }
 }
-
-@import "./index.scss";
-@import "./contact.scss";
-

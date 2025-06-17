@@ -1,8 +1,8 @@
 #view-contact {
     .container {
         display: table;
-        min-width: 640px !important;
-        max-width: 960px !important;
+        min-width: 720px;
+        max-width: 960px;
         height: 100%;
 
         margin-left: auto;
@@ -24,12 +24,15 @@
     // https://pure-css.github.io/buttons/
     .pure-button {
         border-radius: 0.5em;
+        margin: 0 !important;
+        margin-top: 1em !important;
     }
     .button-success {
         color: white;
         text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
         background: rgb(28, 184, 65);
     }
+
 
     .alert {
         border: 1px solid #d3d3d3;
