@@ -24,12 +24,12 @@ body {
 a {
     color: #BF6E3F;
 
-    &:hover {
-        color: #A63117;
-    }
-
     &:visited {
         color: #BF6E3F;
+    }
+
+    &:hover {
+        color: #BF413F;
     }
 }
 
@@ -164,7 +164,11 @@ header {
         width: 48%;
     }
 
-    .contents-1, .contents-2 {
+    .contents-1 {
         vertical-align: middle;
+    }
+
+    .contents-2 {
+        vertical-align: bottom;
     }
 }

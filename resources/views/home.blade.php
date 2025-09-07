@@ -63,6 +63,21 @@
                                 </a>
                             </li>
                         </ul>
+                        <div class="bmc-button">
+                            <script
+                                type="text/javascript"
+                                src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+                                data-name="bmc-button"
+                                data-slug="mcddx330"
+                                data-color="#F2EDE4"
+                                data-emoji=""
+                                data-font="Comic"
+                                data-text="Buy me a coffee (Donate)"
+                                data-outline-color="#BF6E3F"
+                                data-font-color="#BF6E3F"
+                                data-coffee-color="#FFDD00"
+                            ></script>
+                        </div>
                     </div>
                 </div>
 
@@ -70,7 +85,7 @@
 
                 <div class="pm0 pd1 contents">
                     <div class="title">
-                        <p class="main">Tool / Skills</p>
+                        <p class="main">Tools</p>
                     </div>
                     <div class="lists">
                         <ul>

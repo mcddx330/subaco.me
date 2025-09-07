@@ -99,13 +99,13 @@
         }
     }
 
-
     .socials {
         ul {
             display: table;
             table-layout: fixed;
             text-align: center;
             padding: 0;
+            margin: 0;
             width: 80%;
             margin-left: auto;
             margin-right: auto;
@@ -142,4 +142,14 @@
             font-size: xx-large;
         }
     }
+
+    .bmc-button {
+        scale: 70%;
+        .bmc-btn {
+            padding: 0.5em !important;
+            border: 2px solid #BF413F;
+            border-radius: 0.5em;
+        }
+    }
+
 }
