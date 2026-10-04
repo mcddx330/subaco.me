@@ -1,8 +1,10 @@
 #view-contact {
+    /* 画面端の余白を差し引いた幅にも収める */
     .container {
         display: table;
-        min-width: 720px;
-        max-width: 960px;
+        table-layout: fixed;
+        width: min(720px, 100%);
+        max-width: 768px;
         height: 100%;
 
         margin-left: auto;
@@ -19,6 +21,26 @@
 
     .form-control {
         width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 認証部品がフォームの幅を超えないようにする */
+    .cf-turnstile {
+        max-width: 100%;
+
+        iframe {
+            max-width: 100%;
+        }
+    }
+
+    fieldset, legend, form {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    legend {
+        white-space: normal;
     }
 
     // https://pure-css.github.io/buttons/

@@ -19,6 +19,10 @@ body {
     font-style: normal;
     color: #0D0D0D;
     background-color: #F2EDE4;
+    box-sizing: border-box;
+
+    /* 画面端の操作領域を避けつつ、背景は端まで描画する */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
 }
 
 a {
@@ -85,7 +89,7 @@ header {
 
 .container {
     display: table;
-    max-width: 960px;
+    max-width: 768px;
     height: 100%;
 
     margin-left: auto;
@@ -115,60 +119,50 @@ header {
     }
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (max-width: 480px) {
     .container {
         max-width: 480px;
     }
 }
 
-@media screen and (orientation: portrait) and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
+    /* 表の内容による幅の押し広げを防ぐ */
     .container {
-        max-width: 480px;
-    }
-}
-
-@media screen and (orientation: portrait) and (max-width: 768px) {
-    .container {
-        min-width: 640px !important;
-        max-width: 768px !important;
+        width: min(640px, 100%);
+        table-layout: fixed;
     }
 
     .card {
         padding: 0 !important;
-    }
-
-
-    .card {
         width: 100%;
         margin: auto;
-        box-shadow: none !important;
     }
 }
 
-@media screen and (orientation: portrait) and (max-width: 480px) {
-    .container {
-        min-width: 360px !important;
-        max-width: 480px !important;
+.contents-1 {
+    display: inline-block;
+    width: 48%;
+    vertical-align: middle;
+}
+
+.contents-2 {
+    display: inline-block;
+    width: 48%;
+    vertical-align: bottom;
+}
+
+@media screen and (max-width: 480px) {
+    /* 幅480px以下では一列にする */
+    .contents-1,
+    .contents-2 {
+        display: block;
+        width: auto;
     }
 }
 
-@media screen and (orientation: landscape) {
-    /* 横長表示 */
-    .contents-1 {
-        display: inline-block;
-        width: 48%;
-    }
-
-    .contents-2 {
-        display: inline-block;
-        width: 48%;
-    }
-
-    .contents-1 {
-        vertical-align: middle;
-    }
-
-    .contents-2 {
-        vertical-align: bottom;
+@media screen and (max-width: 960px), screen and (max-height: 640px) {
+    .container-body .card {
+        border-radius: 0;
+        box-shadow: none;
     }
 }

@@ -63,7 +63,7 @@
                             ></textarea>
                         </div>
 
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAABDI9oWh9mSdInux" data-callback="javascriptCallback" data-language="ja"></div>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAABDI9oWh9mSdInux" data-size="flexible" data-callback="javascriptCallback" data-language="ja"></div>
 
                         <a href="/" class="pure-button button-success">戻る</a>
                         <button type="submit" class="pure-button pure-button-primary">送信</button>

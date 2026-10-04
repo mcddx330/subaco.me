@@ -33,7 +33,8 @@
 
         img {
             position: relative;
-            width: 200px;
+            width: 200px !important;
+            max-width: 100%;
             height: 200px;
             object-fit: cover;
             z-index: 2;
@@ -51,7 +52,7 @@
             font-size: x-large;
         }
 
-        @media screen and (orientation: portrait) {
+        @media screen and (max-width: 768px) {
             p.name-roman {
                 margin-bottom: 1em;
             }
@@ -139,13 +140,7 @@
             margin-right: auto;
         }
 
-        @media screen and (max-width: 640px) {
-            ul {
-                width: 80%;
-            }
-        }
-
-        @media screen and (orientation: portrait) and (max-width: 520px) {
+        @media screen and (max-width: 768px) {
             ul {
                 width: 80%;
                 display: flex;
@@ -158,12 +153,6 @@
             }
         }
 
-        @media screen and (orientation: landscape) {
-            .socials ul {
-                width: 75%;
-            }
-        }
-
         li {
             display: table-cell;
             vertical-align: middle;
@@ -173,10 +162,27 @@
 
     .bmc-button {
         scale: 70%;
+
+        /* 外部ウィジェットの固定最小幅と改行禁止を打ち消す */
+        .bmc-btn-container,
+        .bmc-btn {
+            max-width: 100%;
+        }
+
         .bmc-btn {
             padding: 0.5em !important;
             border: 2px solid #BF413F;
             border-radius: 0.5em;
+            min-width: 0 !important;
+            box-sizing: border-box;
+        }
+
+        .bmc-btn-text {
+            font-size: x-large;
+            width: auto;
+            line-height: normal;
+            white-space: normal !important;
+            flex-shrink: 1 !important;
         }
     }
 
